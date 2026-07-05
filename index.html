@@ -9,7 +9,7 @@
   <body>
     <dialog>
       <h2>Ok, let's add some shit to do</h2>
-      <p>Add it!</p>
+      <button id="add-to-do">Add it!</button>
       <button id="close-modal">Nevermind, I'm feeling lazy.</button>
     </dialog>
     <div id="entire-ui">
@@ -19,8 +19,17 @@
       <div id="right-column" class="flex column">
         <h2>Look At All The Shit You Have To Do</h2>
       </div>
-      <div id="footer" class="flex row">
-        <button id="add-some-shit">Add Some Shit To Do</button>
+      <div id="sidebar"></div>
+      <div id="all-the-shit-you-have-to-do"></div>
+      <div id="footer" class="flex">
+        <button id="start-to-add-some-shit">Add Some Shit To Do</button>
+      </div>
+      <div id="boring-info" class="flex">
+        <a
+          href="https://github.com/BuildAnythingWithCode/TODO-List"
+          target="_blank"
+          >Made with love, or some shit</a
+        >
       </div>
     </div>
     <script src="script.js"></script>

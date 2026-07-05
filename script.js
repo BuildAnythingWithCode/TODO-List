@@ -2,8 +2,9 @@
 
 // Buttons
 const button = {
-  addToDo: document.querySelector('#add-some-shit'),
+  beginAdding: document.querySelector('#start-to-add-some-shit'),
   closeModal: document.querySelector('#close-modal'),
+  addToDo: document.querySelector('#add-to-do'),
 };
 
 // Elements
@@ -17,10 +18,12 @@ const listOfShitToDo = [];
 // Functions
 
 // Event Handlers
-button.addToDo.addEventListener('click', () => {
+button.beginAdding.addEventListener('click', () => {
   element.modal.showModal();
 });
 
 button.closeModal.addEventListener('click', () => {
   element.modal.close();
 });
+
+button.addToDo.addEventListener('click', () => {});
