@@ -22,6 +22,7 @@
   height: 50vh;
   width: 50vw;
   background-color: rgb(89, 89, 122);
+  border-radius: 20px;
 }
 
 #close-modal-x {
@@ -30,6 +31,7 @@
   right: 0.75rem;
   width: 2rem;
   height: 2rem;
+  padding: 0;
   border-radius: 50%;
   border: none;
 }
@@ -58,8 +60,22 @@ dialog::backdrop {
 
 button {
   cursor: pointer;
+  background-color: rgb(46, 46, 62);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
 }
 
 a {
+  color: rgb(208, 208, 235);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+button {
   color: rgb(208, 208, 235);
 }
