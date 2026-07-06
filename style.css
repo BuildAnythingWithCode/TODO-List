@@ -81,6 +81,7 @@ h4,
 h5,
 h6,
 p,
-button {
+button,
+label {
   color: rgb(208, 208, 235);
 }

@@ -11,12 +11,31 @@ const button = {
 // Elements
 const element = {
   modal: document.querySelector('dialog'),
+  form: document.querySelector('form'),
 };
 
 // Values & Logic
 const listOfShitToDo = [];
 
-// Functions
+// Constructor Function
+function ThingToDo(title, description, dueDate, priority) {
+  this.title = title;
+  this.description = description;
+  this.dueDate = dueDate;
+  this.priority = priority;
+}
+
+// Regular Functions
+function addThingToDo(title, description, dueDate, priority) {
+  title = document.querySelector('#the-shit').value;
+  description = document.querySelector('#the-details-of-the-shit').value;
+  dueDate = document.querySelector('#due-date').value;
+  priority = document.querySelector('#importance').value;
+  const newThingToDo = new ThingToDo(title, description, dueDate, priority);
+  listOfShitToDo.push(newThingToDo);
+}
+
+function updateDomAfterAddingNewThingToDo() {}
 
 // Event Handlers
 button.beginAdding.addEventListener('click', () => {
@@ -24,11 +43,19 @@ button.beginAdding.addEventListener('click', () => {
 });
 
 button.closeModalLazy.addEventListener('click', () => {
+  element.form.reset();
   element.modal.close();
 });
 
 button.closeModalX.addEventListener('click', () => {
+  element.form.reset();
   element.modal.close();
 });
 
-button.addToDo.addEventListener('click', () => {});
+element.form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  addThingToDo();
+  console.log('form submitted!', listOfShitToDo);
+  element.form.reset();
+  element.modal.close();
+});

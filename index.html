@@ -10,26 +10,53 @@
     <dialog>
       <div id="modal-content" class="flex column">
         <button id="close-modal-x">&times;</button>
-        <h2>Ok, let's add some shit to do</h2>
+        <h2>Ok, Let's Add Some Shit To Do</h2>
         <form action="" method="post" class="flex column">
           <input
             id="the-shit"
             type="text"
             placeholder="What is the shit?"
-            required
-          />
+            required />
           <textarea
             id="the-details-of-the-shit"
             type="text"
             placeholder="What are the details of the shit?"
-            required
-          ></textarea></textarea>
+            required></textarea>
+          <h3>How Important Is This Shit?</h3>
+          <label>
+            <input
+              type="radio"
+              id="importance"
+              name="importance"
+              value="high"
+              required />
+            Really Important
+          </label>
+          <label>
+            <input
+              type="radio"
+              id="importance"
+              name="importance"
+              value="medium"
+              required />
+            Kinda Important
+          </label>
+          <label>
+            <input
+              type="radio"
+              id="importance"
+              name="importance"
+              value="low"
+              required />
+            Not That Important
+          </label>
+          <h3>When Is This Shit Due?</h3>
+          <input type="date" name="due-date" id="due-date" required />
           <button type="submit" id="add-to-do">Add it!</button>
         </form>
         <button id="close-modal-lazy">Nevermind, I'm feeling lazy.</button>
       </div>
     </dialog>
-
     <div id="entire-ui">
       <div id="left-column" class="flex column">
         <h2>Shit To Do</h2>
