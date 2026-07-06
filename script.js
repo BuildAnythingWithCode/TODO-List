@@ -3,7 +3,8 @@
 // Buttons
 const button = {
   beginAdding: document.querySelector('#start-to-add-some-shit'),
-  closeModal: document.querySelector('#close-modal'),
+  closeModalLazy: document.querySelector('#close-modal-lazy'),
+  closeModalX: document.querySelector('#close-modal-x'),
   addToDo: document.querySelector('#add-to-do'),
 };
 
@@ -22,7 +23,11 @@ button.beginAdding.addEventListener('click', () => {
   element.modal.showModal();
 });
 
-button.closeModal.addEventListener('click', () => {
+button.closeModalLazy.addEventListener('click', () => {
+  element.modal.close();
+});
+
+button.closeModalX.addEventListener('click', () => {
   element.modal.close();
 });
 
