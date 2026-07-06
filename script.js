@@ -12,6 +12,9 @@ const button = {
 const element = {
   modal: document.querySelector('dialog'),
   form: document.querySelector('form'),
+  shitToDoSection: document.querySelector(
+    '#all-the-shit-you-have-to-do-section',
+  ),
 };
 
 // Values & Logic
@@ -33,9 +36,10 @@ function addThingToDo(title, description, dueDate, priority) {
   priority = document.querySelector('input[name="importance"]:checked').value;
   const newThingToDo = new ThingToDo(title, description, dueDate, priority);
   listOfShitToDo.push(newThingToDo);
+  const newEntry = document.createElement('p');
+  newEntry.textContent = `${title}, ${description}, ${dueDate}, ${priority}`;
+  element.shitToDoSection.appendChild(newEntry);
 }
-
-function updateDomAfterAddingNewThingToDo() {}
 
 // Event Handlers
 button.beginAdding.addEventListener('click', () => {
@@ -55,7 +59,6 @@ button.closeModalX.addEventListener('click', () => {
 element.form.addEventListener('submit', (event) => {
   event.preventDefault();
   addThingToDo();
-  updateDomAfterAddingNewThingToDo();
   console.log('form submitted!', listOfShitToDo);
   element.form.reset();
   element.modal.close();
