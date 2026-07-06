@@ -44,6 +44,10 @@ form {
   gap: 1rem;
 }
 
+#sidebar {
+  gap: 1rem;
+}
+
 .flex {
   display: flex;
   align-items: center;
@@ -84,4 +88,8 @@ p,
 button,
 label {
   color: rgb(208, 208, 235);
+}
+
+#sidebar {
+  justify-content: flex-start;
 }
