@@ -29,8 +29,7 @@
               id="importance-high"
               name="importance"
               value="high"
-              required />
-            Really Important
+              required />Really Important
           </label>
           <label>
             <input
@@ -38,8 +37,7 @@
               id="importance-medium"
               name="importance"
               value="medium"
-              required />
-            Kinda Important
+              required />Kinda Important
           </label>
           <label>
             <input
@@ -47,11 +45,31 @@
               id="importance-low"
               name="importance"
               value="low"
-              required />
-            Not That Important
+              required />Not That Important
           </label>
           <h3>When Is This Shit Due?</h3>
           <input type="date" name="due-date" id="due-date" required />
+          <h3>What Project Should This Shit Go Into?</h3>
+          <label>
+            <input
+              type="radio"
+              id="default-project"
+              name="project"
+              value="default" />Default Project</label
+          >
+          <label>
+            <input
+              type="radio"
+              id="other-project"
+              name="project"
+              value="other" />Other Project...</label
+          >
+          <input
+            type="text"
+            id="custom-project"
+            name="custom-project"
+            placeholder="Custom Project Name..."
+            disabled />
           <button type="submit" id="add-to-do">Add it!</button>
         </form>
         <button id="close-modal-lazy">Nevermind, I'm feeling lazy.</button>
@@ -65,7 +83,7 @@
         <h2>Look At All The Shit You Have To Do</h2>
       </div>
       <div id="sidebar"></div>
-      <div id="all-the-shit-you-have-to-do-section"></div>
+      <div id="all-the-shit-you-have-to-do-section" class="flex column"></div>
       <div id="footer" class="flex">
         <button id="start-to-add-some-shit">Add Some Shit To Do</button>
       </div>

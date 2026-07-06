@@ -15,7 +15,22 @@ const element = {
   shitToDoSection: document.querySelector(
     '#all-the-shit-you-have-to-do-section',
   ),
+  defaultProject: document.querySelector('#default-project'),
+  customProject: document.querySelector('#custom-project'),
+  choiceOfProject: document.querySelectorAll("input[name='project']"),
 };
+
+element.choiceOfProject.forEach((radio) => {
+  radio.addEventListener('change', () => {
+    if (element.defaultProject.checked) {
+      element.customProject.disabled = true;
+      element.customProject.required = false;
+    } else {
+      element.customProject.disabled = false;
+      element.customProject.required = true;
+    }
+  });
+});
 
 // Values & Logic
 const listOfShitToDo = [];
@@ -37,7 +52,7 @@ function addThingToDo(title, description, dueDate, priority) {
   const newThingToDo = new ThingToDo(title, description, dueDate, priority);
   listOfShitToDo.push(newThingToDo);
   const newEntry = document.createElement('p');
-  newEntry.textContent = `${title}, ${description}, ${dueDate}, ${priority}`;
+  newEntry.textContent = `Title: ${title}, Description: ${description}, Due Date: ${dueDate}, Priority: ${priority}`;
   element.shitToDoSection.appendChild(newEntry);
 }
 
