@@ -11,15 +11,21 @@
       <div id="modal-content" class="flex column">
         <button id="close-modal-x">&times;</button>
         <h2>Ok, let's add some shit to do</h2>
-        <form action="" method="post">
-          <input id="the-shit" type="text" placeholder="What is the shit?" />
+        <form action="" method="post" class="flex column">
           <input
+            id="the-shit"
+            type="text"
+            placeholder="What is the shit?"
+            required
+          />
+          <textarea
             id="the-details-of-the-shit"
             type="text"
             placeholder="What are the details of the shit?"
-          />
+            required
+          ></textarea></textarea>
+          <button type="submit" id="add-to-do">Add it!</button>
         </form>
-        <button id="add-to-do">Add it!</button>
         <button id="close-modal-lazy">Nevermind, I'm feeling lazy.</button>
       </div>
     </dialog>
