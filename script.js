@@ -30,7 +30,7 @@ function addThingToDo(title, description, dueDate, priority) {
   title = document.querySelector('#the-shit').value;
   description = document.querySelector('#the-details-of-the-shit').value;
   dueDate = document.querySelector('#due-date').value;
-  priority = document.querySelector('#importance').value;
+  priority = document.querySelector('input[name="importance"]:checked').value;
   const newThingToDo = new ThingToDo(title, description, dueDate, priority);
   listOfShitToDo.push(newThingToDo);
 }
@@ -55,6 +55,7 @@ button.closeModalX.addEventListener('click', () => {
 element.form.addEventListener('submit', (event) => {
   event.preventDefault();
   addThingToDo();
+  updateDomAfterAddingNewThingToDo();
   console.log('form submitted!', listOfShitToDo);
   element.form.reset();
   element.modal.close();
