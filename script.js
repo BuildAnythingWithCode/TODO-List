@@ -22,6 +22,7 @@ const element = {
   sidebar: document.querySelector('#sidebar'),
 };
 
+// Default/Custom Project Logic On Form
 element.choiceOfProject.forEach((radio) => {
   radio.addEventListener('change', () => {
     if (element.defaultProject.checked) {
@@ -74,6 +75,18 @@ function addThingToDo(title, description, dueDate, priority, project) {
   const newEntry = document.createElement('p');
   newEntry.textContent = `Title: ${title}, Description: ${description}, Due Date: ${dueDate}, Priority: ${priority}, Project: ${project}`;
   element.shitToDoSection.appendChild(newEntry);
+  const deleteItem = document.createElement('button');
+  deleteItem.textContent = 'Delete This Shit';
+  newEntry.appendChild(deleteItem);
+  deleteItem.addEventListener('click', () => {
+    // REVIEW BELOW !!!
+    const index = listOfShitToDo.indexOf(newThingToDo);
+    if (index > -1) {
+      listOfShitToDo.splice(index, 1);
+      newEntry.remove();
+      // REVIEW ABOVE !!!
+    }
+  });
 }
 
 // Event Handlers
